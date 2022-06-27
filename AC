@@ -1,0 +1,17 @@
+if not hookmetamethod or not getrenv then
+    game.Players.LocalPlayer:Kick("shit executer")
+    end
+    local OldNameCall = nil
+    OldNameCall = hookmetamethod(game, "__namecall", function(...)
+    local Args = {...}
+    local Self = Args[1]
+    if getnamecallmethod()=="IsStudio"  then
+        return true
+    end
+    if getnamecallmethod()=="FireServer" and tostring(Self)=="MainEvent" then
+        if Args[2] == "CHECKER_1" or Args[2] == "TeleportDetect" or Args[2] == "OneMoreTime"  then
+            return nil
+        end
+    end
+    return OldNameCall(...)
+end)
