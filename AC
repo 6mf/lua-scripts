@@ -1,8 +1,8 @@
 if not hookmetamethod or not getrenv then
-    game.Players.LocalPlayer:Kick("shit executer")
-    end
-    local OldNameCall = nil
-    OldNameCall = hookmetamethod(game, "__namecall", function(...)
+    game.Players.LocalPlayer:Kick("Executer not supported")
+end
+local OldNameCall = nil
+OldNameCall = hookmetamethod(game, "__namecall", function(...)
     local Args = {...}
     local Self = Args[1]
     if getnamecallmethod()=="IsStudio"  then
